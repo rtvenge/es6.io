@@ -7,12 +7,10 @@ import { apiKey as key,
   age,
   dog
 } from './src/config';
+import User, { createURL, gravatar } from './src/user';
 
-console.log(key);
-console.log(url);
-
-sayHi('Ryan');
-
-const ages = [1, 1, 4, 52, 12, 4];
-
-console.log(uniq(ages));
+const ryan = new User('Ryan Tvenge', 'ryan@tvenge.me', 'ryantvenge.com');
+const profile = createURL(ryan.name);
+const image = gravatar(ryan.email);
+console.log(image);
+console.log(ryan);
